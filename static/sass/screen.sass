@@ -2,17 +2,16 @@
 @import "compass/reset"
 @import "compass/css3/user-interface"
 @import "compass"
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=latin,cyrillic)
 
 
 // Variables
-$main-font-color      : #372a21
-$sub-dark-color       : #382a20
-$main-link-color      : #8c7e72
-$main-link-hove-color : #665c53
-$border-color         : #d9d9d9
-$dark-border-color    : #a6a6a6
-$icons                : sprite-map("icons/*.png", $layout: smart)
+$main-font-color       : #372a21
+$sub-dark-color        : #382a20
+$main-link-color       : #8c7e72
+$main-link-hover-color : #665c53
+$border-color          : #d9d9d9
+$dark-border-color     : #a6a6a6
+$icons                 : sprite-map("icons/*.png", $layout: smart)
 
 
 // Icons
@@ -52,7 +51,7 @@ a
     text-decoration: none
     outline: none
     &:hover
-        color: $main-link-hove-color
+        color: $main-link-hover-color
 h1
     font-size: 28px
     display: block
@@ -61,9 +60,16 @@ h2
     font-size: 22px
     display: block
     margin-top: 20px
+h3
+    font-size: 18px
+    font-weight: bold
+    display: block
+    margin-top: 20px
 p
     line-height: 1.5em
     margin-top: 15px
+strong
+    font-weight: bold
 
 
 // Buttons
@@ -77,10 +83,25 @@ p
     cursor: pointer
     &:hover
         color: white
-        background: $main-link-hove-color
+        background: $main-link-hover-color
         +box-shadow(rgba(black,.7) 0 2px 0)
     &:active
         +box-shadow(rgba(black,.6) 0 1px 0)
+
+
+// Form elements
+.text-input
+    font-family: sans-serif
+    font-size: 13px
+    color: $main-font-color
+    width: 100%
+    padding: 5px 10px 
+    outline: none
+    border: solid 1px $border-color
+    +border-radius(5px)
+    +box-shadow(rgba(55,42,33,.5) 0 1px 1px inset)
+    &:focus
+        border-color: $dark-border-color
 
 
 // Header and footer
@@ -117,6 +138,25 @@ p
         display: block
         &:hover
             color: #c9c9c9
+.header-contacts
+    line-height: 22px
+    padding-top: 30px
+    a
+        color: $main-font-color
+    i
+        margin-right: 1px
+        margin-bottom: -3px
+.header-search
+    padding-top: 20px
+.header-search-holder
+    margin-top: 8px
+    position: relative
+    .text-input
+        padding-right: 23px
+    i
+        position: absolute
+        top: 10px
+        right: 10px
 
 
 // Category tile panel
@@ -152,6 +192,14 @@ p
                     bottom: 0
                     left: 0
                     z-index: 2
+.short-variant-holder
+    .category-tile
+        margin-top: 10px
+.short-variant
+    height: 60px
+    a
+        height: 60px !important
+        width: 100%
 .tags-holder
     min-height: 80px
     padding: 15px 20px 
@@ -194,6 +242,20 @@ p
 .news-text
     font-size: 14px
     margin-top: 8px
+    @extend .group
+    img
+        float: left
+        margin-top: 5px
+        margin-right: 15px
+.pagination
+    span
+        color: $border-color
+    a
+        display: inline-block
+        padding: 3px
+        &.selected
+            color: white
+            background: $main-link-color
 
 
 // New goods
@@ -240,6 +302,23 @@ p
         bottom: 0
         left: 5px
         z-index: -1
+
+
+// Partnership
+.delivery-table
+    font-size: 13px
+    line-height: 17px
+    width: 100%
+    margin: 20px 0 30px
+    border-collapse: separate 
+    border-spacing: 5px
+    td, th
+        padding: 3px 10px
+    tr th, .table-label
+        color: white
+        background: $main-link-color
+        min-width: 150px
+        padding: 7px 10px
             
 
 // Grid
@@ -259,6 +338,9 @@ p
 .col-2-3
     @extend %grid
     width: 66.66%
+.col-3-4
+    @extend %grid
+    width: 75%
 
 
 // Helpers
@@ -271,6 +353,8 @@ p
     text-align: center
 .align-right
     text-align: right
+.float-left
+    float: left
 
 
 
