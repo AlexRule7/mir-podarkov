@@ -11,7 +11,7 @@ output_style = :compressed
 line_comments = false
 preferred_syntax = :sass
 
-require "susy"
+# require "susy"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
